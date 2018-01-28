@@ -10,3 +10,10 @@ def index():
     '''
     message = 'Hello world'
     return render_template('index.html',message=message)
+
+@app.route('/news/<news_id>')
+def news(news_id):
+    '''
+    view page function that returns the news articles and its data
+    '''
+    return render_template('news.html', id=news_id)
