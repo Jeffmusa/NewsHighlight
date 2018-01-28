@@ -8,8 +8,12 @@ def index():
     View root page function that returns the index page and 
     its data
     '''
+
+    #get general movies
+    general = get_sources('general')
+    print(general)
     title = 'Home - Welcome to the best Online News Website'
-    return render_template('index.html',title=title)
+    return render_template('index.html',title=title, general=general)
 
 @app.route('/news/<news_id>')
 def news(news_id):
