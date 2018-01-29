@@ -87,7 +87,7 @@ def process_articles(articles_list):
         id = source_dictionary['id']
         name = source_dictionary['name']
         
-        author = result.get['author']
+        author = result.get('author')
         title = result.get('title')
         description = result.get('description')
         url = result.get('url')
