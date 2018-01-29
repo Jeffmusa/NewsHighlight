@@ -4,7 +4,7 @@
 <!-- styles block-->
     {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{urlfor('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     {% endblock %}
 <!-- end of styles -->
     {% block content %}

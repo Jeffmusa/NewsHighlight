@@ -51,7 +51,7 @@ def process_sources(sources_list):
         language = sources_item.get('language')
         country = sources_item.get('country')
 
-        if url:
+        if id:
             sources_object = Source(id,name,description,url,category,language,country)
 
             sources_results.append(sources_object)
@@ -61,4 +61,43 @@ def get_articles(id):
     '''
     Function that gets the json response to url request
     '''
-    
+    get_article_news_url = article_url.format(id,api_key)
+    with urllib.request.urlopen(get_article_news_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        article_results = None
+
+        if get_articles_response['articles']:
+            article_results_list = get_articles_response['articles']
+            article_results = process_articles(article_results_list)
+
+    return article_results
+
+def process_articles(articles_list):
+    '''
+    process the dictionary and output a list of objects
+    '''
+    article_results = []
+    source_dictionary = {}
+    for result in articles_list:
+        source_id = result ['source']
+        source_dictionary['id'] = source_id['id']
+        source_dictionary['name'] = source_id['name']
+        id = source_dictionary['id']
+        name = source_dictionary['name']
+        
+        author = result.get['author']
+        title = result.get('title')
+        description = result.get('description')
+        url = result.get('url')
+        urlToImage = result.get('urlToImage')
+        publishedAt = result.get('publishedAt')
+
+        if urlToImage:
+            print (id)
+            article_object = Article(id,name,author,title,description,url,urlToImage,publishedAt)
+
+            article_results.append(article_object)
+
+    return article_results
