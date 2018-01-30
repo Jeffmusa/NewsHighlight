@@ -9,22 +9,25 @@
 <!-- end of styles -->
 
     {% block content %}
-    <h3>NEWS HIGHLIGHTS</h3>
     <div class="jumbotron">
+        <h3>NEWS SOURCES</h3>
            <p> Do you ever wish to catch all your favorite news from one site??</p>
             <p>Well, we bring the chance closer home. Click on either of the categories and get a link 
                 to your favorite news source and news headlines. You also get a chance to get the entire news straight from its source.
             </p>
-    </div>
-    <div class="jumbotron">
+            <p>Click on the various tabs to continue</p>
+            <hr/>
     <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#general">GENERAL</a></li>
+            <li><a data-toggle="tab" href="#general">GENERAL</a></li>
             <li><a data-toggle="tab" href="#sports">SPORTS</a></li>
             <li><a data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
             <li><a data-toggle="tab" href="#entertainment">ENTERTAINMENT</a></li>
-    </ul>
+            <li><a data-toggle="tab" href="#health">HEALTH</a></li>
+            <li><a data-toggle="tab" href="#science">SCIENCE</a></li>
+            <li><a data-toggle="tab" href="#business">BUSINESS</a></li>
+        </ul>
           <div class="tab-content">
-            <div id="general" class="tab-pane fade in active">
+            <div id="general" class="tab-pane fade">
                 <!--general news section-->
                 {{ macro.displayNewsList(general) }}
             </div>
@@ -39,6 +42,18 @@
             <div id="entertainment" class="tab-pane fade">
                 <!-- Entertainment news sources -->
                 {{ macro.displayNewsList(entertainment) }}
+            </div>
+            <div id="health" class="tab-pane fade">
+                <!-- Health news sources -->
+                {{ macro.displayNewsList(health) }}
+            </div>
+            <div id="business" class="tab-pane fade">
+                <!-- Business news sources -->
+                {{macro.displayNewsList(business)}}
+            </div>
+            <div id="science" class="tab-pane fade">
+                <!--Science news sources-->
+                {{macro.displayNewsList(science)}}
             </div>
           </div>
 
