@@ -1,7 +1,6 @@
-from app import app
 import urllib.request
 import json
-from .models import news_source,news_article
+from .models import Source,Article
 
 Source = news_source.Source
 Article = news_article.Article
