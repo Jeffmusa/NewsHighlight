@@ -7,14 +7,22 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     {% endblock %}
 <!-- end of styles -->
+
     {% block content %}
+    <h3>NEWS HIGHLIGHTS</h3>
+    <div class="jumbotron">
+           <p> Do you ever wish to catch all your favorite news from one site??</p>
+            <p>Well, we bring the chance closer home. Click on either of the categories and get a link 
+                to your favorite news source and news headlines. You also get a chance to get the entire news straight from its source.
+            </p>
+    </div>
     <div class="jumbotron">
     <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#general">GENERAL</a></li>
             <li><a data-toggle="tab" href="#sports">SPORTS</a></li>
             <li><a data-toggle="tab" href="#technology">TECHNOLOGY</a></li>
             <li><a data-toggle="tab" href="#entertainment">ENTERTAINMENT</a></li>
-          </ul>
+    </ul>
           <div class="tab-content">
             <div id="general" class="tab-pane fade in active">
                 <!--general news section-->
