@@ -27,9 +27,11 @@
             <li><a data-toggle="tab" href="#business">BUSINESS</a></li>
         </ul>
           <div class="tab-content">
+
             <div id="general" class="tab-pane fade">
+               
                 <!--general news section-->
-                {{ macro.displayNewsList(general) }}
+                {{macro.displayNewsList(general)}}
             </div>
             <div id="sports" class="tab-pane fade">
                 <!-- Sports news sources-->
@@ -56,6 +58,8 @@
                 {{macro.displayNewsList(science)}}
             </div>
           </div>
-
+    </div>
+    <div class="jumbotron">
+        <p>&copy; 2018 <a href="https://VickyMutai.github.io">Victoria Mutai</a> and <a href="newsapi.org">NEWS API</a></p>
     </div>
     {% endblock %}
